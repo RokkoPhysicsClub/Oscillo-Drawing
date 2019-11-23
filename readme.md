@@ -15,6 +15,7 @@ OSはRaspbian、他にWiringPiが入っている必要あり。
 このプログラムはWiringPiを使っています。ピン配置は以下の通り。
 ![ラズパイのピン配置](http://homunet.sakura.ne.jp/wp/wp-content/uploads/2016/02/e04b2f5a506284f6b1cbb3b41b93d4d9.png)
 これを、以下の通りにD/Aコンバーターと繋ぎます。
+
 | X軸 |     | Y軸 |     |
 | --- | --- | --- | --- |
 | BCM | D/A | BCM | D/A |
