@@ -56,7 +56,7 @@ void Draw() {
     // printf("%d\n",images);
 
     for(int i = 0; i < images; i++) {
-        // loop for the number of image
+        // loop for the number of images
 
         int elements = 0; // number of elements
 
