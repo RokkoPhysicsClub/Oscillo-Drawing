@@ -1,0 +1,214 @@
+{
+	"workbench.startupEditor": "newUntitledFile",
+	"sync.gist": "c52eb13354267811dfda154cc1d7e634",
+	"atomKeymap.promptV3Features": true,
+	"editor.multiCursorModifier": "ctrlCmd",
+	"editor.formatOnPaste": true,
+	"editor.renderLineHighlight": "all",
+	"editor.roundedSelection": false,
+	"editor.highlightActiveIndentGuide": false,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"csharp.format.enable": false,
+	"omnisharp.useEditorFormattingSettings": false,
+	"editor.suggestSelection": "first",
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"files.exclude": {
+		"**/.classpath": true,
+		"**/.project": true,
+		"**/.settings": true,
+		"**/.factorypath": true
+	},
+	"C_Cpp.default.includePath": [
+		"C:\\MinGW\\include",
+		"C:\\MinGW\\lib\\gcc\\mingw32\\[VERSION]\\include\\c++",
+		"C:\\MinGW\\lib\\gcc\\mingw32\\[VERSION]\\include\\c++\\mingw32"
+	],
+	"C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\g++.exe",
+	"C_Cpp.default.cppStandard": "c++14",
+	"C_Cpp.default.intelliSenseMode": "gcc-x64",
+	"explorer.confirmDelete": false,
+	"terminal.integrated.rendererType": "dom",
+	"backgroundCover.opacity": 0.35, //デフォの0.2だと暗めです。
+	"backgroundCover.randomImageFolder": "C:/Users/user100/Documents/VSCode/BG",
+	"backgroundCover.imagePath": "C:\\Users\\user100\\Documents\\VSCode\\BG\\5.jpg",
+	"editor.minimap.showSlider": "always",
+	"explorer.confirmDragAndDrop": false,
+	"C_Cpp.loggingLevel": "Warning",
+	"C_Cpp.clang_format_style": "{ BasedOnStyle: Webkit,AllowShortIfStatementsOnASingleLine: true, BreakBeforeBraces: Attach, SpaceBeforeParens: Never, IndentWidth: 4 }",
+	"editor.formatOnSave": true,
+	"editor.formatOnType": true,
+	"[cpp]": {
+		"editor.tabSize": 4
+	},
+	"editor.tabCompletion": "on",
+	"vsicons.dontShowNewVersionMessage": true,
+	"csharp.testsCodeLens.enabled": false,
+	//
+	//latex workshop
+	// editor.wordSeparators: 単語単位での移動を行う場合の区切り文字を指定
+	// 日本語文書で単語移動を使うため、助詞や読点、括弧を区切り文字として指定する
+	"editor.wordSeparators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?　、。「」【】『』（）！？てにをはがのともへでや",
+	// 設定: LaTeX Workshop
+	// LaTeX Workshop ではビルド設定を「Tool」と「Recipe」という2つで考える
+	//   Tool: 実行される1つのコマンド。コマンド (command) と引数 (args) で構成される
+	//   Recipe: Tool の組み合わわせを定義する。Tool の組み合わせ (tools) で構成される。
+	//           tools の中で利用される Tool は "latex-workshop.latex.tools" で定義されている必要がある。
+	// latex-workshop.latex.tools: Tool の定義
+	"latex-workshop.latex.tools": [
+		// latexmk を利用した xelatex によるビルドコマンド
+		{
+			"name": "Latexmk (XeLaTeX)",
+			"command": "latexmk",
+			"args": [
+				"-f",
+				"-gg",
+				"-pv",
+				"-xelatex",
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"%DOC%"
+			]
+		},
+		// latexmk を利用した uplatex によるビルドコマンド
+		{
+			"name": "Latexmk (upLaTeX)",
+			"command": "latexmk",
+			"args": [
+				"-f",
+				"-gg",
+				"-pv",
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"%DOC%"
+			]
+		},
+		// latexmk を利用した platex によるビルドコマンド
+		// 古い LaTeX のテンプレートを使いまわしている (ドキュメントクラスが jreport や jsreport ) 場合のため
+		{
+			"name": "Latexmk (pLaTeX)",
+			"command": "latexmk",
+			"args": [
+				"-f",
+				"-gg",
+				"-pv",
+				"-latex='platex'",
+				"-latexoption='-kanji=utf8 -no-guess-input-env'",
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"%DOC%"
+			]
+		},
+		// latexmk を利用した lualatex によるビルドコマンド
+		{
+			"name": "Latexmk (LuaLaTeX)",
+			"command": "latexmk",
+			"args": [
+				"-f",
+				"-gg",
+				"-pv",
+				"-lualatex",
+				"-synctex=1",
+				"-interaction=nonstopmode",
+				"-file-line-error",
+				"%DOC%"
+			]
+		}
+	],
+	// latex-workshop.latex.recipes: Recipe の定義
+	"latex-workshop.latex.recipes": [
+		// XeLaTeX で書かれた文書のビルドレシピ
+		{
+			"name": "XeLaTeX",
+			"tools": [
+				"Latexmk (XeLaTeX)"
+			]
+		},
+		// LaTeX(upLaTeX) で書かれた文書のビルドレシピ
+		{
+			"name": "upLaTeX",
+			"tools": [
+				"Latexmk (upLaTeX)"
+			]
+		},
+		// LaTeX(pLaTeX) で書かれた文書のビルドレシピ
+		{
+			"name": "pLaTeX",
+			"tools": [
+				"Latexmk (pLaTeX)"
+			]
+		},
+		// LuaLaTeX で書かれた文書のビルドレシピ
+		{
+			"name": "LuaLaTeX",
+			"tools": [
+				"Latexmk (LuaLaTeX)"
+			]
+		}
+	],
+	// latex-workshop.latex.magic.args: マジックコメント付きの LaTeX ドキュメントをビルドする設定
+	// '%!TEX' で始まる行はマジックコメントと呼ばれ、LaTeX のビルド時にビルドプログラムに解釈され、
+	// プログラムの挙動を制御する事ができる。
+	// 参考リンク: https://blog.miz-ar.info/2016/11/magic-comments-in-tex/
+	"latex-workshop.latex.magic.args": [
+		"-f",
+		"-gg",
+		"-pv",
+		"-synctex=1",
+		"-interaction=nonstopmode",
+		"-file-line-error",
+		"%DOC%"
+	],
+	// latex-workshop.latex.clean.fileTypes: クリーンアップ時に削除されるファイルの拡張子
+	// LaTeX 文書はビルド時に一時ファイルとしていくつかのファイルを生成するが、最終的に必要となるのは
+	// PDF ファイルのみである場合などが多い。また、LaTeX のビルド時に失敗した場合、失敗時に生成された
+	// 一時ファイルの影響で、修正後のビルドに失敗してしまう事がよくある。そのため、一時的なファイルを
+	// 削除する機能 (クリーンアップ) が LaTeX Workshop には備わっている。
+	"latex-workshop.latex.clean.fileTypes": [
+		"*.aux",
+		"*.bbl",
+		"*.blg",
+		"*.idx",
+		"*.ind",
+		"*.lof",
+		"*.lot",
+		"*.out",
+		"*.toc",
+		"*.acn",
+		"*.acr",
+		"*.alg",
+		"*.glg",
+		"*.glo",
+		"*.gls",
+		"*.ist",
+		"*.fls",
+		"*.log",
+		"*.fdb_latexmk",
+		"*.synctex.gz",
+		// for Beamer files
+		"_minted*",
+		"*.nav",
+		"*.snm",
+		"*.vrb",
+	],
+	// latex-workshop.view.pdf.viewer: PDF ビューアの開き方
+	// VSCode 自体には PDF ファイルを閲覧する機能が備わっていないが、
+	// LaTeX Workshop にはその機能が備わっている。
+	// "tab" オプションを指定すると、今開いているエディタを左右に分割し、右側に生成されたPDFを表示するようにしてくれる
+	// この PDF ビュアーは LaTeX のビルドによって更新されると同期して内容を更新してくれる。
+	"latex-workshop.view.pdf.viewer": "tab",
+	// latex-workshop.latex.clean.onFailBuild.enabled: ビルド失敗時に一時ファイルのクリーンアップを行うかどうか
+	// 上記説明にもあったように、ビルド失敗時に生成された一時ファイルが悪影響を及ぼす事があるため、自動で
+	// クリーンアップがかかるようにしておく。
+	"latex-workshop.latex.clean.onFailBuild.enabled": true,
+	// latex-workshop.latex.autoBuild.onSave.enabled: .tex ファイルの保存時に自動的にビルドを行うかどうか
+	// LaTeX ファイルは .tex ファイルを変更後にビルドしないと、PDF ファイル上に変更結果が反映されないため、
+	// .tex ファイルの保存と同時に自動的にビルドを実行する設定があるが、文書が大きくなるに連れてビルドにも
+	// 時間がかかってしまい、ビルドプログラムの負荷がエディタに影響するため、無効化しておく。
+	"latex-workshop.latex.autoBuild.onSave.enabled": false,
+	"latex-workshop.latex.autoClean.run": "onFailed",
+	"latex-workshop.latex.autoBuild.run": "never",
+}

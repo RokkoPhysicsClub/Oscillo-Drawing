@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+
+<script>
+
+function onFileSelected(input) {
+
+    var file = input.files[0];
+
+    var reader = new FileReader();
+
+    reader.onload = onFileLoaded;
+
+    reader.readAsDataURL(file);
+
+}
+
+function onFileLoaded(e) {
+
+    var src_data = e.target.result;
+
+    var img = new Image();
+
+    img.onload = onImageSetted;
+    img.src = src_data;
+
+}
+
+function onImageSetted(e) {
+
+    var img_data = createImageData(e.target);
+
+    document.getElementById('test_canvas').width = img_data.width;
+    document.getElementById('test_canvas').height = img_data.height;
+
+    document.getElementById('test_canvas').getContext('2d').putImageData(img_data, 0, 0);
+
+    document.getElementById('test_canvas').img_data = img_data;
+
+    document.getElementById('test_canvas').addEventListener('click', processImageData);
+
+}
+
+function createImageData(img) {
+
+    var cv = document.createElement('canvas');
+
+    cv.width = img.naturalWidth;
+    cv.height = img.naturalHeight;
+
+    var ct = cv.getContext('2d');
+
+    ct.drawImage(img, 0, 0);
+
+    var data = ct.getImageData(0, 0, cv.width, cv.height);
+
+    return data;
+
+}
+
+function processImageData(e) {
+
+    var cv = document.getElementById('test_canvas');
+    var img_data = cv.img_data;
+
+    if (!img_data) {
+        alert("not image");
+    }
+
+    var processed_data = cv.getContext('2d').createImageData(img_data.width, img_data.height);
+
+    for (var y = 1;y < img_data.height - 1;y++) {
+        for (var x = 1;x < img_data.width - 1;x++) {
+
+            var r_sum = 0;
+            var g_sum = 0;
+            var b_sum = 0;
+
+            // 周囲3*3ピクセルのRGB成分を合計
+            for (var yy = y - 1;yy <= y + 1;yy++) {
+                for (var xx = x - 1;xx <= x + 1;xx++) {
+
+                    var index = (xx + yy * img_data.width) * 4;
+
+                    r_sum += img_data.data[index];
+                    g_sum += img_data.data[index + 1];
+                    b_sum += img_data.data[index + 2];
+
+                }
+            }
+
+            var index = (x + y * img_data.width) * 4;
+
+            // RGB平均値を算出
+            var r = Math.floor(r_sum / 9);
+            var g = Math.floor(g_sum / 9);
+            var b = Math.floor(b_sum / 9);
+
+            processed_data.data[index] = r;
+            processed_data.data[index + 1] = g;
+            processed_data.data[index + 2] = b;
+            processed_data.data[index + 3] = 255;
+
+        }
+    }
+
+    cv.getContext('2d').putImageData(processed_data, 0, 0);
+
+}
+
+
+$(function() {
+	$('#slider').slider({
+		max : 255,
+		value: 128
+	});
+});
+
+</script>
+
+<p>
+<input type="file" onchange="onFileSelected(this)">
+</p>
+
+<p>
+<canvas id="test_canvas" width=256 height=256 style="border: 1px solid;" onclick="processImageData()"></canvas>
+</p>
+
+<label for="slider">白に近いのを完全に白くする</label>
+    <div id="slider"></div>
+<br>
+</body>
+</html>
