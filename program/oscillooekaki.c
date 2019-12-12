@@ -28,7 +28,7 @@ void Point(int x, int y) {
 }
 
 void Paint() {
-    FILE *fp; // FILE^\¢Ì
+    FILE *fp;
     char fname[] = "";
     char str[N];
 
@@ -37,9 +37,7 @@ void Paint() {
 
     char path[] = "../data/";
 
-    fp = fopen(
-        strcat(path, fname),
-        "r"); // t@CðJ­B¸s·éÆNULLðÔ·B
+    fp = fopen(strcat(path, fname), "r");
     if(fp == NULL) {
         printf("%s file not open!\n", fname);
     }
@@ -63,7 +61,7 @@ void Paint() {
         }
     }
 
-    fclose(fp); // t@CðÂ¶é
+    fclose(fp);
 }
 
 int main(void) {
