@@ -2,7 +2,7 @@
 ## 概要
 これは、オシロスコープに256\*256の点描画を表示するシステムです。
 ![Sample image](https://pbs.twimg.com/media/DuN4ZdfVsAAuScb?format=jpg&name=small)
-<iframe src="http://embed.nicovideo.jp/watch/sm35870485"></iframe>
+[https://www.nicovideo.jp/watch/sm35870485:embed]
 ## 動作環境
 ### ハードウェア
 RaspberryPi3B,3B+(4Bは未確認、多分動く)
