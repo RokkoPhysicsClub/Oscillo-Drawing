@@ -2,7 +2,7 @@
 ## 概要
 これは、オシロスコープに256\*256の点描画を表示するシステムです。
 ![Sample image](https://pbs.twimg.com/media/DuN4ZdfVsAAuScb?format=jpg&name=small)
-[https://www.nicovideo.jp/watch/sm35870485:embed]
+<script type="application/javascript" src="https://embed.nicovideo.jp/watch/sm35870485/script?w=640&h=360"></script><noscript><a href="https://www.nicovideo.jp/watch/sm35870485">オシロスコープで「少女終末旅行」 OP『動く、動く』を表示してみた</a></noscript>
 ## 動作環境
 ### ハードウェア
 RaspberryPi3B,3B+(4Bは未確認、多分動く)
