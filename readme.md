@@ -1,6 +1,7 @@
 # オシロお絵描き
 ## 概要
 これは、オシロスコープに256\*256の点描画を表示するシステムです。
+![Sample image](https://pbs.twimg.com/media/DuN4ZdfVsAAuScb?format=jpg&name=small)
 ## 動作環境
 ### ハードウェア
 RaspberryPi3B,3B+(4Bは未確認、多分動く)
