@@ -3,6 +3,7 @@
 これは、オシロスコープに256\*256の点描画を表示するシステムです。
 ![Sample image](https://pbs.twimg.com/media/DuN4ZdfVsAAuScb?format=jpg&name=small)
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr"><a href="https://twitter.com/hashtag/%E4%BB%8A%E6%97%A5%E3%81%AE%E7%89%A9%E7%90%86%E9%83%A8?src=hash&amp;ref_src=twsrc%5Etfw">#今日の物理部</a><br>今日のと言っても昨日のですが<br>もうそろそろ高2生(78期)引退ということで、そろそろオシロお絵かき計画も集大成といったところです。<br>手始めにまずこれを。<br><br>アニメ「少女終末旅行」OPの「動く、動く」MVをオシロスコープで表示してみました。 <a href="https://t.co/SufvPvsq2e">pic.twitter.com/SufvPvsq2e</a></p>&mdash; 【公式】六甲学院物理部 (@RokkoPhysics) <a href="https://twitter.com/RokkoPhysics/status/1188304401108094978?ref_src=twsrc%5Etfw">October 27, 2019</a></blockquote>
+![aaa](https://t.co/SufvPvsq2e)
 ## 動作環境
 ### ハードウェア
 RaspberryPi3B,3B+(4Bは未確認、多分動く)
