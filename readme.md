@@ -58,9 +58,9 @@ $ ./oscillooekaki
 <pre>
 .
 └─ program
- |       └─ osirooekaki
- └─ data
-         └─ Rabbit.osd
+|       └─ osirooekaki
+└─ data
+        └─ Rabbit.osd
 </pre>
 たとえば、上の場合 ファイル名にはRabbit.osdと入力します。
 #### oscillodoga
