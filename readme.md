@@ -1,11 +1,16 @@
 # オシロお絵描き
 ## 概要
-これは、オシロスコープに256\*256の点描画を表示するシステムです。
-![Sample image](https://pbs.twimg.com/media/DuN4ZdfVsAAuScb?format=jpg&name=small)
+これは、オシロスコープに256\*256の点描画を表示するシステムです。  
+静止画と動画の表示、描画関数を利用して楽にオシロスコープに表示するプログラムが作れます。
+![Sample image](https://pbs.twimg.com/media/DuN4ZdfVsAAuScb?format=jpg&name=small) 
 ## 動作環境
 ### ハードウェア
-RaspberryPi3B,3B+(4Bは未確認、多分動く)
-OSはRaspbian、他にWiringPiが入っている必要あり。
+RaspberryPi3B,3B+(4Bは未確認、多分動く)  
+電源回りが弱いと、動作が不安定になるので容量の大きな電源、ケーブルを使用しましょう。
+
+### ソフトウェア
+OSはRaspbian、他にWiringPiが入っている必要あり。  
+Cのコンパイラー
 ### オシロスコープ
 帯域5MHz以上、2chでX-Yモードがあるタイプ
 (アナログ推奨、デジタルでも動くはず)
@@ -28,15 +33,36 @@ OSはRaspbian、他にWiringPiが入っている必要あり。
 | 24  | 5   | 9   | 5   |
 | 25  | 6   | 11  | 14  |
 | 4   | 7   | 14  | 7   |
+| GND | GND | GND | GND |
 
+例
+
+![ラダー抵抗の回路図](https://i.imgur.com/M1lVp3i.png)
+
+X軸に1/256を出力したいときはBCM17ピンをHIGHにします。
 ### オシロスコープの設定
 1.オシロスコープをX-Yモードにする。  
-2.グランドレベルの光点の位置をオシロスコープの左下端に移す。  
-3.両チャンネルに5V入力時の光点を右上端にあわせる。  
+2.一定の電圧を出力するにはprogram/setvoltage.cを使います。  
+3.グランドレベルの光点の位置(X value=0) (Y value=0)をオシロスコープの左下端に移す。  
+4.両チャンネルに5V入力時(X value=255) (Y value=255)の光点を右上端にあわせる。
+
 ## オシロお絵描きの動かし方
 ### 特殊オシロお絵描き(oscillooekaki,oscillodoga)
 #### oscillooekaki
-オシロスコープに静止画を表示します。実行時の"ファイル名"にdataの中に入れたosdファイルを指定します。
+オシロスコープに静止画を表示します。実行時の"ファイル名"にdataの中に入れたosdファイルを指定します。  
+
+```shell
+$ ./oscillooekaki
+ファイル名: <osd file name>
+```
+<pre>
+.
+└─ program
+ |       └─ osirooekaki
+ └─ data
+         └─ Rabbit.osd
+</pre>
+たとえば、上の場合 ファイル名にはRabbit.osdと入力します。
 #### oscillodoga
 オシロスコープに動画を表示します。実行時の"ファイル名"にdataの中に入れたosdファイルを指定します。"framerate"にフレームレートを入力しす。
 フレームレートは浮動小数点型に対応しています。
