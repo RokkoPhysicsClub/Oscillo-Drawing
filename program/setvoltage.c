@@ -21,4 +21,5 @@ scanf("%d", &value);
 outX(value);
 printf("input Y value(0-255)...");
 scanf("%d", &value);
+outY(value);
 }
