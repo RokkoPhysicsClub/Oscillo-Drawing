@@ -73,3 +73,10 @@ https://itoho.wjg.jp/osirooekaki
 oscillo_template.cを元に任意の図形をオシロスコープに表示するプログラムを作る事ができます。
 oscillo_function.hでサポートされている関数を使う事ができます。コンパイル時にはwiringPiとマスライブラリーを指定する必要があります。
 oscillo_tetrisは使用例です。
+
+## NEW!!オシロお絵かきMTシリーズ
+マルチスレッド化により効率化した新世代のオシロお絵かきです。
+oscillodoga_IDL.cは静止画、動画双方に対応できます。
+MTはマルチスレッドの略です。
+ヘッダファイルはマルチスレッド用のoscillofunctionMT.hを参照してください。
+最新版のIDL型は光点が少ない画像では表示速度を自動で落として画像が滲むのを防ぎます。
